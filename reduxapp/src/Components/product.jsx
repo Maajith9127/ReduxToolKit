@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { add,decrement } from '../app/slices/CartSlice.js';
+import { add } from '../app/slices/CartSlice.js';
+
 const Product = () => {
   const [product, setProduct] = useState([]); // 'product' should be lowercase
   const string = JSON.stringify(product, null, 2); // Optional: Pretty formatting
@@ -16,6 +17,7 @@ const Product = () => {
   }, []);
 
   const dispatch = useDispatch()
+
   const AddToCart =(e)=>{
     console.log(e.target.closest(".card"))
    const  cardDiv =e.target.closest(".card")
@@ -32,11 +34,16 @@ const Product = () => {
       image: cardDiv.querySelector("img").src,
   };
 
+  //action object creator function takes in an json object 
+
   const actionObject = add(product);
 console.log("Action Object:", actionObject); 
 //Now the action object looks like
 // {type: 'MyCartSlice/add', payload: {…}}
   dispatch(actionObject)
+
+  //dispatch function takes in an appropriate action object and  dispatches it and understands it and sends it to the redux
+  //toolkit and the 
 
 
 
@@ -54,6 +61,8 @@ console.log("Action Object:", actionObject);
   </div>
 
   ));
+  //actually product.map returns a array
+  //which looks like cards= [ card1, card2 ,.... ]
 
 
 
@@ -69,5 +78,6 @@ console.log("Action Object:", actionObject);
     </div>
   ); 
 };
+
 
 export default Product;

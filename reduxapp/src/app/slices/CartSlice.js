@@ -5,7 +5,8 @@ const initialState = {
 }
 //Note:initialState-->cant change
 
-export const CartSlice = createSlice({
+export const CartSlice = createSlice(
+    {
     name: 'MyCartSlice',
     initialState,
     reducers: {
@@ -26,9 +27,16 @@ export const CartSlice = createSlice({
     },
 })
 
+
+//the action object looks like
+// {type: 'MyCartSlice/add', payload: {…}}
 // Action creators are generated for each case reducer function
 export const { add, decrement } = CartSlice.actions
 
 export default CartSlice.reducer;
 //This is what the reducer fn looks like
 // cartReducer(a State, { type: "@@INIT",payload:____ })
+// a reducer function takes in two parametres
+//1) the state
+//2)action object
+//it returns the initial state
