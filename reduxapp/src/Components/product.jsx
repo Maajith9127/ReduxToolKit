@@ -6,24 +6,26 @@ import { useSelector } from 'react-redux';
 const Product = () => {
   const dispatch = useDispatch()
   const product = useSelector((state) => state.MyProductSlice.products);
-  //Testing async thunk 
+
   
   useEffect(() => {
+    
     dispatch(fetchProducts()); // ✅ Runs only once when the component mounts
-  }, []);
+    
+  }, [dispatch])
+  console.log(product)
   
-console.log(product)
+
 
   // const [product, setProduct] = useState([]); // 'product' should be lowercase
   // const string = JSON.stringify(product, null, 2); // Optional: Pretty formatting
-
   // useEffect(() => {
   //   fetch("https://api.escuelajs.co/api/v1/products").then(response => { return response.json() }).then(result => {
   //     console.log(result)
   //     setProduct(result)
   //   })
   // }, []);
-// this use effect hook will run only after rendering
+  // this use effect hook will run only after rendering
 
 
   //Imp Conncept to remember:
