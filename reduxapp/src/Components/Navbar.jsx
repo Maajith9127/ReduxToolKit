@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  
   const cart = useSelector((state)=>state.MyFirstCartslicer)
 
 console.log("Hi I am Navbar")

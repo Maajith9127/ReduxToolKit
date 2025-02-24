@@ -32,12 +32,12 @@ const actionobject= decrement(e)
     // console.log(e,e.id,e.name,e.image,e.price,e.description)
     return(
 
-    <div key={e.id} data-id={e.id} className="card border w-[50%] border-gray-400  mb-4 flex flex-col items-center gap-3 p-5 rounded-[20px] ">
+    <div key={e.id} data-id={e.id} className="card border w-[100%] border-gray-400  mb-4 flex flex-col items-center gap-3 p-5 rounded-[20px] ">
     <img className='rounded-[25px]' src={e.image} alt={e.name} width="150px" height="150px" />
     <h2 className='font-bold'>{e.name}</h2>
     <p>Description:{e.description}</p>
     <p>Price: ${e.price}</p>
-    <button onClick={()=>RemoveItem(e.id)}  type='button' className='bg-indigo-600 text-white p-4 rounded-[20px] hover:cursor-pointer hover:bg-indigo-800  '>Remove from cart</button>
+    <button onClick={()=>RemoveItem(e.id)}  type='button' className='bg-red-600 text-white p-4 rounded-[20px] hover:cursor-pointer hover:bg-red-800  '>Remove from cart</button>
   </div>
     )
 

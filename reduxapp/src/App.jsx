@@ -11,6 +11,7 @@ function App() {
     <div className="m-6">
       {/* Every element wrapped inside the router now has the ability to use  */}
       <Router>
+
         <Routes>
 
           <Route path="/" element={<Layout />} >
