@@ -1,7 +1,7 @@
 import Layout from "./Components/Layout.jsx";
 import Navbar from "./Components/Navbar.jsx";
 import Product from "./Components/product.jsx"
-import Trial from "./Components/trial.jsx";
+import Trial from "./Components/Trial.jsx";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 function App() {
 
