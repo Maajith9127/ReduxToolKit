@@ -6,42 +6,50 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
 
-  const cart = useSelector((state)=>state.MyFirstCartslicer)
-console.log(cart)
-console.log("Hi I am Navbar")
-console.log(cart.value.length)
-const no=cart.value.length
+
+  const cart = useSelector((state) => state.MyFirstCartslicer)
+
+  //   console.log(cart)
+  // console.log("Hi I am Navbar")
+  // console.log(cart.value.length)
+
+  const no = cart.value.length
+
   return (
-    <div className='relative sticky top-0'>
+    <div className='relative sticky z-50 top-0'>
       {/* Main Navbar */}
       <div className='flex justify-between items-center px-4 sm:px-6 lg:px-8 py-4 sm:py-5 bg-white border-b border-gray-200 shadow-sm mb-6'>
         <h1 className='font-bold text-indigo-600 text-2xl sm:text-3xl tracking-tight'>
           MyRedux Toolkit
         </h1>
-        
-        {/* Desktop Navigation */}
+
         <div className='hidden md:flex gap-6 lg:gap-8'>
-          <Link 
-            to="/" 
-            className='text-gray-700 font-medium hover:text-indigo-600 transition-colors duration-200 px-2 py-1'
-          >
+          <Link
+            to="/"
+            className='text-gray-700 font-medium hover:text-indigo-600 transition-colors duration-200 px-2 py-1'>
             Products
+          </Link >
+          <Link to="/Login" className='text-gray-700 font-medium hover:text-indigo-600 transition-colors duration-200 px-2 py-1' >
+            Login
           </Link>
-          <Link 
-            to="/trial" 
-            className='text-gray-700 font-medium hover:text-indigo-600 transition-colors duration-200 px-2 py-1'
-          >
+          <Link to="/Register" className='text-gray-700 font-medium hover:text-indigo-600 transition-colors duration-200 px-2 py-1' >
+            Register
+          </Link>
+          
+
+          <Link
+            to="/trial"
+            className='text-gray-700 font-medium hover:text-indigo-600 transition-colors duration-200 px-2 py-1'>
             Cart
             <span className=' ml-3 font-bold text-indigo-600   rounded-[100%] p-2'>
-             {no}
+              {no}
 
             </span>
           </Link>
         </div>
-        
-        {/* Refined Hamburger Button */}
+
         <div className='md:hidden'>
-          <button 
+          <button
             className='w-8 h-8 relative focus:outline-none flex items-center justify-center'
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
@@ -54,28 +62,38 @@ const no=cart.value.length
           </button>
         </div>
       </div>
-      
-      {/* Mobile Menu Dropdown with Refined Animation */}
+
+
       <div className={`mobile-menu ${menuOpen ? 'active' : ''}`}>
         <div className='flex flex-col py-2'>
-          <Link 
-            to="/" 
+          <Link
+            to="/"
             className='mobile-link'
             onClick={() => setMenuOpen(false)}
           >
             Products
           </Link>
-          <Link 
-            to="/trial" 
+
+          <Link to="/Login" className='mobile-link' >
+            Login
+          </Link>
+          <Link to="/Register" className='mobile-link' >
+            Register
+          </Link>
+          <Link
+            to="/trial"
             className='mobile-link'
             onClick={() => setMenuOpen(false)}
           >
-            Cart 
+            Cart
+            <span className=' ml-3 font-bold text-indigo-600   rounded-[100%] p-2'>
+              {no}
+
+            </span>
           </Link>
         </div>
       </div>
 
-      {/* Embedded CSS for refined animations */}
       <style jsx>{`
         .hamburger {
           width: 24px;
@@ -184,3 +202,17 @@ const no=cart.value.length
 }
 
 export default Navbar
+
+
+
+
+
+
+
+
+
+
+
+
+
+

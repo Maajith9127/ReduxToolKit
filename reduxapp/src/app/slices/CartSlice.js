@@ -14,7 +14,21 @@ export const CartSlice = createSlice(
             console.log('Hey the add does');
             // console.log(action.payload);
             // console.log(state);
-            state.value.push(action.payload); 
+            const exists = state.value.some(item => item.id === action.payload.id);
+
+            if (!exists) {
+                state.value.push(action.payload);
+            } else {
+                console.log("Item already exists in the cart!");
+            }
+
+
+
+
+
+
+
+        
          
         },
         decrement: (state, action) => {
