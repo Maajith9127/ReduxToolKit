@@ -50,12 +50,12 @@ const Product = () => {
       className="card bg-white shadow-lg rounded-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl cursor-pointer flex flex-col"
     >
       {/* Image Section */}
-      <div className="image-container w-full h-[250px] flex justify-center items-center overflow-hidden">
-        <img className="w-full transform transition-all duration-300 hover:scale-105 object-cover rounded-t-lg" src={e.images[0]} alt={e.title} />
+      <div className="image-container w-full h-[350px] flex justify-center items-center overflow-hidden">
+        <img className="w-full  transform transition-all duration-300 hover:scale-105 object-cover rounded-t-lg" src={e.images[0]} alt={e.title} />
       </div>
 
       {/* Content Section with Fixed Height */}
-      <div className="p-5 flex flex-col flex-grow">
+      <div className="p-5 flex  flex-col flex-grow">
         <h2 className="text-lg font-bold text-gray-900">{e.title}</h2>
         <p className="text-sm text-gray-600 mt-2 flex-grow">{e.description}</p>
         <p className="text-md font-semibold text-indigo-600 mt-2">Price: ${e.price}</p>

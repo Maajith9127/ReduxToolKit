@@ -6,6 +6,7 @@ import Register from "./Components/Register.jsx";
 import Trial from "./Components/Trial.jsx";
 import ProductDetails from "./Components/ProductDetails.jsx";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Profile } from "./Components/Profile.jsx";
 function App() {
 
 
@@ -23,6 +24,7 @@ function App() {
             <Route path="Login" element={<Login />}></Route>
             <Route path="Register" element={<Register />}></Route>
             <Route path="product/:slug" element={<ProductDetails />} />
+            <Route path="Profile" element={<Profile/>}></Route>
           </Route>
 
         </Routes>

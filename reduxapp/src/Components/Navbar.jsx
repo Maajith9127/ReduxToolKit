@@ -18,12 +18,19 @@ const Navbar = () => {
           <Link to='/' className='text-gray-700 font-medium hover:text-indigo-600 transition duration-200'>
             Products
           </Link>
+
+           <Link to='/Profile'  className='text-gray-700 font-medium hover:text-indigo-600 transition duration-200'>
+           Profile
+           </Link>
+
           <Link to='/Login' className='text-gray-700 font-medium hover:text-indigo-600 transition duration-200'>
             Login
           </Link>
+
           <Link to='/Register' className='text-gray-700 font-medium hover:text-indigo-600 transition duration-200'>
             Register
           </Link>
+          
           <Link to='/trial' className='relative text-gray-700 font-medium hover:text-indigo-600 transition duration-200 flex items-center'>
             Cart
             <span className='ml-2 bg-indigo-600 text-white text-sm font-bold rounded-full px-2 py-1'>

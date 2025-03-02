@@ -14,8 +14,35 @@ const Login = () => {
             emailId: '',
             password: ''
           }}
-          onSubmit={(values) => {
+
+          onSubmit={async (values) => {
+
             console.log("Login Submitted:", values);
+            const response= await fetch("http://localhost:3000/log",{
+              credentials:"include",
+              method:"POST",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify(values)
+              
+            }
+
+
+            )
+
+
+            if(response.ok){
+
+              console.log(response)
+              const resjson= await response.json()
+              console.log(resjson)
+
+
+            }else{
+              console.log("Failed to login ")
+            }
+
           }}
           validationSchema={LoginSchema}
           
